@@ -1,0 +1,62 @@
+<ion-content class="ion-padding app-background">
+  <div class="login-container">
+    <ion-card class="login-card">
+
+      <div class="header-section ion-text-center">
+        <img src="assets/logo.jpeg" class="full-logo" alt="Booka Logo">
+        <p>Gerencie seus compromissos com facilidade</p>
+      </div>
+
+      <ion-segment [(ngModel)]="tipoUsuario" mode="ios" class="custom-segment">
+        <ion-segment-button value="cliente">
+          <ion-label>Sou Cliente</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="prestador">
+          <ion-label>Sou Prestador</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div class="form-section">
+        <ion-item lines="none" class="custom-input">
+          <ion-label position="stacked">E-mail</ion-label>
+          <ion-input type="email" placeholder="exemplo@email.com"></ion-input>
+        </ion-item>
+
+        <div class="label-row">
+          <ion-label>Senha</ion-label>
+          <ion-note class="forgot-password">Esqueceu a senha?</ion-note>
+        </div>
+        <ion-item lines="none" class="custom-input">
+          <ion-input type="password" placeholder="Digite sua senha"></ion-input>
+          <ion-icon name="eye-outline" class="input-icon" slot="end"></ion-icon>
+        </ion-item>
+
+        <ion-button expand="block" class="main-button">
+          Entrar
+        </ion-button>
+      </div>
+
+      <div class="divider">
+        <span>OU CONTINUE COM</span>
+      </div>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-button fill="outline" expand="block" class="social-button">
+            <ion-icon slot="start" name="logo-google"></ion-icon> Google
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button fill="outline" expand="block" class="social-button">
+            <ion-icon slot="start" name="logo-apple"></ion-icon> Apple
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <p class="ion-text-center signup-text">
+        Não tem uma conta? <span class="link-text" routerLink="/cadastro">Criar conta</span>
+      </p>
+
+    </ion-card>
+  </div>
+</ion-content>

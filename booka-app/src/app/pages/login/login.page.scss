@@ -1,0 +1,142 @@
+/* --- IMPORTAÇÃO DAS FONTES GOOGLE --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- VARIÁVEIS DO NOVO DESIGN SYSTEM --- */
+$slate-50: #f8fafc;
+$slate-100: #f1f5f9;
+$slate-200: #e2e8f0;
+$slate-500: #64748b;
+$slate-900: #0f172a;
+$indigo-600: #4f46e5;
+$indigo-700: #4338ca;
+$white: #ffffff;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.app-background {
+  --background: #{$slate-50}; 
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.login-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  width: 100%;
+  max-width: 400px;
+  padding: 24px 16px;
+  background: $white;
+  border: 1px solid $slate-200; 
+}
+
+.header-section {
+  margin-bottom: 24px;
+  p { font-size: 14px; color: $slate-500; margin: 0; font-weight: 400; }
+}
+
+.full-logo {
+  max-height: 40px; 
+  margin: 0 auto 15px; 
+  display: block;
+}
+
+.custom-segment {
+  background: $slate-100;
+  --background: #{$slate-100};
+  border-radius: 25px;
+  margin-bottom: 24px;
+  padding: 4px;
+}
+
+ion-segment-button {
+  --indicator-color: #{$white}; 
+  --color: #{$slate-500};         
+  --color-checked: #{$slate-900}; 
+  --border-radius: 20px;
+  font-weight: 500;
+  margin: 0 2px;
+}
+
+.custom-input {
+  --background: $white;
+  --color: #{$slate-900}; 
+  border: 1px solid $slate-200;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  --padding-start: 12px;
+  
+  ion-label {
+    color: $slate-500;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
+.input-icon {
+  color: $slate-500;
+  font-size: 20px;
+  padding-right: 12px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  padding: 0 4px;
+  ion-label { font-size: 14px; font-weight: 500; color: $slate-900; }
+}
+
+.forgot-password {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: $indigo-600; 
+}
+
+.main-button {
+  --background: #{$indigo-600}; 
+  --background-hover: #{$indigo-700};
+  --border-radius: 25px;
+  margin-top: 24px;
+  height: 48px;
+  font-weight: 600;
+  text-transform: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.divider {
+  text-align: center;
+  margin: 24px 0;
+  border-bottom: 1px solid $slate-100; 
+  line-height: 0.1em;
+  span { background: $white; padding: 0 10px; color: $slate-500; font-size: 12px; font-weight: 500; }
+}
+
+.social-button {
+  --border-radius: 25px;
+  --border-color: #{$slate-200};
+  --color: #{$slate-900};
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.signup-text {
+  margin-top: 24px;
+  font-size: 14px;
+  color: $slate-500;
+}
+
+.link-text {
+  color: $indigo-600; 
+  font-weight: 600;
+  cursor: pointer;
+}

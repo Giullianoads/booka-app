@@ -1,0 +1,79 @@
+<ion-content class="ion-padding app-background">
+  <div class="login-container">
+    <ion-card class="login-card">
+
+      <div class="header-section ion-text-center">
+        <img src="assets/logo.jpeg" class="full-logo" alt="Booka Logo">
+        <p>Crie sua conta no Booka hoje mesmo</p>
+      </div>
+
+      <ion-segment [(ngModel)]="tipoUsuario" mode="ios" class="custom-segment">
+        <ion-segment-button value="cliente">
+          <ion-label>Sou Cliente</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="prestador">
+          <ion-label>Sou Prestador</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div class="form-section">
+        <ion-item lines="none" class="custom-input">
+          <ion-label position="stacked">Nome completo</ion-label>
+          <ion-input type="text" placeholder="Digite seu nome"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input">
+          <ion-label position="stacked">E-mail</ion-label>
+          <ion-input type="email" placeholder="exemplo@email.com"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input">
+          <ion-label position="stacked">Telefone</ion-label>
+          <ion-input type="tel" placeholder="(00) 00000-0000"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input" *ngIf="tipoUsuario === 'cliente'">
+          <ion-label position="stacked">CPF</ion-label>
+          <ion-input type="text" placeholder="000.000.000-00"></ion-input>
+        </ion-item>
+
+        <ng-container *ngIf="tipoUsuario === 'prestador'">
+          <ion-item lines="none" class="custom-input">
+            <ion-label position="stacked">CPF ou CNPJ</ion-label>
+            <ion-input type="text" placeholder="Digite o documento"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-label position="stacked">Nome da Empresa</ion-label>
+            <ion-input type="text" placeholder="Ex: Barbearia do João"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-label position="stacked">Horário de Funcionamento</ion-label>
+            <ion-input type="text" placeholder="Ex: Seg a Sex, 08:00 as 18:00"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="custom-input">
+            <ion-label position="stacked">Serviços e Valores</ion-label>
+            <ion-textarea placeholder="Corte: R$ 50,00&#10;Barba: R$ 30,00" rows="3"></ion-textarea>
+          </ion-item>
+        </ng-container>
+
+        <ion-item lines="none" class="custom-input">
+          <ion-label position="stacked">Senha</ion-label>
+          <ion-input type="password" placeholder="Crie uma senha"></ion-input>
+          <ion-icon name="eye-outline" class="input-icon" slot="end"></ion-icon>
+        </ion-item>
+
+        <ion-button expand="block" class="main-button">
+          Cadastrar
+        </ion-button>
+      </div>
+
+      <p class="ion-text-center signup-text">
+        Já possui uma conta? <span class="link-text" routerLink="/login">Fazer Login</span>
+      </p>
+
+    </ion-card>
+  </div>
+</ion-content>
