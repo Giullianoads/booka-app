@@ -14,7 +14,17 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Verificação de Systema</strong>
+    <p>Clique no botão abaixo para testar a conexão com o Supabase.</p>
+    
+    <ion-button (click)="verificarConexao()" expand="block" shape="round">
+      Testar Conexão
+    </ion-button>
+
+    <p *ngIf="statusConexao" [class]="statusConexao.includes('sucesso') ? 'success-text' : 'error-text'">
+      {{ statusConexao }}
+    </p>
+
+    <p>Comece com os <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">Componentes UI do Ionic</a></p>
   </div>
 </ion-content>

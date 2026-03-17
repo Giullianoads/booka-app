@@ -28,17 +28,17 @@
 
           <ion-item lines="none" class="custom-input">
             <ion-label position="stacked">Nome completo</ion-label>
-            <ion-input type="text" placeholder="Digite seu nome"></ion-input>
+            <ion-input type="text" placeholder="Digite seu nome" [(ngModel)]="nome"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="custom-input">
             <ion-label position="stacked">E-mail</ion-label>
-            <ion-input type="email" placeholder="exemplo@email.com"></ion-input>
+            <ion-input type="email" placeholder="exemplo@email.com" [(ngModel)]="email"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="custom-input">
             <ion-label position="stacked">Telefone</ion-label>
-            <ion-input type="tel" placeholder="(00) 00000-0000"></ion-input>
+            <ion-input type="tel" placeholder="(00) 00000-0000" [(ngModel)]="telefone"></ion-input>
           </ion-item>
 
           <ion-button expand="block" class="main-button" (click)="proximaEtapa()">
@@ -51,31 +51,31 @@
           <ng-container *ngIf="tipoUsuario === 'cliente'">
             <ion-item lines="none" class="custom-input">
               <ion-label position="stacked">CPF</ion-label>
-              <ion-input type="text" placeholder="000.000.000-00"></ion-input>
+              <ion-input type="text" placeholder="000.000.000-00" [(ngModel)]="cpf"></ion-input>
             </ion-item>
           </ng-container>
 
           <ng-container *ngIf="tipoUsuario === 'prestador'">
             <ion-item lines="none" class="custom-input">
               <ion-label position="stacked">CPF ou CNPJ</ion-label>
-              <ion-input type="text" placeholder="Digite o documento"></ion-input>
+              <ion-input type="text" placeholder="Digite o documento" [(ngModel)]="cpfCnpj"></ion-input>
             </ion-item>
 
             <ion-item lines="none" class="custom-input">
               <ion-label position="stacked">Nome da Empresa</ion-label>
-              <ion-input type="text" placeholder="Ex: Barbearia do João"></ion-input>
+              <ion-input type="text" placeholder="Ex: Barbearia do João" [(ngModel)]="nomeEmpresa"></ion-input>
             </ion-item>
 
             <ion-item lines="none" class="custom-input">
               <ion-label position="stacked">Horário de Funcionamento</ion-label>
-              <ion-input type="text" placeholder="Ex: Seg a Sex, 08:00 as 18:00"></ion-input>
+              <ion-input type="text" placeholder="Ex: Seg a Sex, 08:00 as 18:00" [(ngModel)]="horarioFuncionamento"></ion-input>
             </ion-item>
 
           </ng-container>
 
           <ion-item lines="none" class="custom-input">
             <ion-label position="stacked">Senha</ion-label>
-            <ion-input type="password" placeholder="Crie uma senha"></ion-input>
+            <ion-input type="password" placeholder="Crie uma senha" [(ngModel)]="senha"></ion-input>
             <ion-icon name="eye-outline" class="input-icon" slot="end"></ion-icon>
           </ion-item>
 
@@ -86,11 +86,15 @@
               </ion-button>
             </ion-col>
             <ion-col size="9">
-              <ion-button expand="block" class="main-button no-margin">
+              <ion-button expand="block" class="main-button no-margin" (click)="criarConta()">
                 Criar Conta
               </ion-button>
             </ion-col>
           </ion-row>
+
+          <ion-button fill="clear" expand="block" color="medium" (click)="testeCadastroRapido()">
+            Testar Cadastro (Dados Aleatórios)
+          </ion-button>
         </div>
 
       </div>
